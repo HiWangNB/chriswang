@@ -76,44 +76,52 @@
         }
         
         /* 英雄区域 */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(3, 4, 94, 0.7), rgba(11, 61, 145, 0.7)), url('https://images.unsplash.com/photo-1454789548928-9efd52dc4031?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            padding-top: 80px;
-        }
-        
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero-content p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--dark-color);
-            padding: 12px 30px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
-        
-        .btn:hover {
-            background-color: white;
-            transform: translateY(-3px);
-        }
-        
+<!-- 在hero部分修改 -->
+<section class="hero">
+    <div class="video-background">
+        <video autoplay muted loop id="bgVideo">
+            <source src="your-video-file.mp4" type="video/mp4">
+            <!-- 备用图片 -->
+            <img src="fallback-image.jpg" alt="Background">
+        </video>
+    </div>
+    <div class="container">
+        <div class="hero-content">
+            <h1>探索未知的可能性</h1>
+            <p>我是[你的名字]，一名充满激情的[你的职业/领域]专业人士...</p>
+            <a href="#projects" class="btn">查看我的项目</a>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* 添加视频背景样式 */
+    .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+    }
+    
+    #bgVideo {
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+    }
+    
+    .hero {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        padding-top: 80px;
+        background: rgba(3, 4, 94, 0.5); /* 叠加半透明颜色 */
+    }
+</style>
         /* 关于部分 */
         .section {
             padding: 100px 0;
